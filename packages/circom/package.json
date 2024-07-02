@@ -1,10 +1,10 @@
 {
-  "name": "@zk-dapp-poc/snarkjs",
+  "name": "@zk-dapp-poc/circom",
   "version": "0.0.1",
   "author": "Daniel Cybulka",
   "license": "UNLICENSED",
   "main": "dist/index",
-  "description": "PoC using backend with snarkjs",
+  "description": "PoC using circom",
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "nest build",

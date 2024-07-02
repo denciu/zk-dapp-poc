@@ -32,7 +32,7 @@ describe('AppController', () => {
     await app.close()
   })
 
-  describe('SnarkJS PoC', () => {
+  describe('Circom PoC', () => {
     const sourceFrom = new Date(process.env.SOURCE_FROM).getTime()
     const sourceTo = new Date(process.env.SOURCE_TO).getTime()
 
@@ -58,7 +58,7 @@ describe('AppController', () => {
         expect(body.publicSignals?.length).toBeGreaterThan(0)
       })
 
-      it('fails: from > to from', async () => {
+      it('fails: tested "from" timestamp > tested "to" timestamp', async () => {
         testedFrom = sourceTo
         testedTo = sourceFrom
 
@@ -69,7 +69,7 @@ describe('AppController', () => {
         )
       })
 
-      it('fails: from < source from', async () => {
+      it('fails: tested "from" timestamp < source "from" timestamp', async () => {
         testedFrom = new Date('01/01/2023').getTime()
         testedTo = new Date('06/30/2024').getTime()
 
@@ -80,7 +80,7 @@ describe('AppController', () => {
         )
       })
 
-      it('fails: to > source to', async () => {
+      it('fails: tested "to" timestamp > source "to" timestamp', async () => {
         testedFrom = new Date('01/01/2024').getTime()
         testedTo = new Date('07/01/2024').getTime()
 
